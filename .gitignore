@@ -1,0 +1,37 @@
+# Quartus generated directories
+db/
+incremental_db/
+output_files/
+simulation/
+.qsys_edit/
+greybox_tmp/
+hc_output/
+
+# Quartus workspace / GUI state
+*.qws
+*.qpf.bak
+*.rpt
+*.summary
+*.smsg
+*.pin
+*.done
+*.jdi
+*.sld
+*.qarlog
+
+# Programming / output files
+*.sof
+*.pof
+*.rbf
+*.jam
+*.jbc
+*.svf
+
+# Misc generated junk
+PLLJ_PLLSPE_INFO.txt
+c5_pin_model_dump.txt
+
+# Platform Designer generated output (regenerable from .qsys/.ip)
+# Comment these out if you'd rather commit generated IP — see note below
+*/synthesis/
+*/simulation/
