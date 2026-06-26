@@ -82,6 +82,7 @@ Headline number is **median time per call**; throughput is secondary.
 | gelu           | f32   | 250880 elems          |    30 |      72.375 |   72.346 |    72.389 |   0.044 | 3.47 Melem/s   |
 | residual_add   | f32   | 62720 elems           |    30 |       0.918 |    0.912 |     0.924 |   0.015 | 68.32 Melem/s  |
 
+p.s. the matrix dimensions are examples and don't reflect the actual tinyvit case
 ---
 
 ## 3. Roofline Analysis — `mlp_fc1` (int8)
