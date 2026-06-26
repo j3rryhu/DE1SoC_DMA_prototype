@@ -120,3 +120,9 @@ movement is **~1 %** of compute time. Arithmetic intensity ≈ 54 MACs/byte, so
 this op is firmly **compute-bound**: 230 MB/s is nowhere near the bottleneck, and
 offloading the matmul to the FPGA should pay off provided the FPGA MAC array is
 large enough to beat the compute time.
+
+### TODO
+1. debug dma bus width issue
+2. debug f2h sdram bridge
+3. do timing to figure out max clock
+4. implement accuracy test
