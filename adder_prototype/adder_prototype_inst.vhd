@@ -1,5 +1,11 @@
 	component adder_prototype is
 		port (
+			axi_signals_arcache             : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- arcache
+			axi_signals_arprot              : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- arprot
+			axi_signals_aruser              : in    std_logic_vector(4 downto 0)  := (others => 'X'); -- aruser
+			axi_signals_awcache             : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- awcache
+			axi_signals_awprot              : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- awprot
+			axi_signals_awuser              : in    std_logic_vector(4 downto 0)  := (others => 'X'); -- awuser
 			clk_clk                         : in    std_logic                     := 'X';             -- clk
 			hps_io_hps_io_emac0_inst_TX_CLK : out   std_logic;                                        -- hps_io_emac0_inst_TX_CLK
 			hps_io_hps_io_emac0_inst_TXD0   : out   std_logic;                                        -- hps_io_emac0_inst_TXD0
@@ -42,18 +48,18 @@
 			memory_mem_odt                  : out   std_logic;                                        -- mem_odt
 			memory_mem_dm                   : out   std_logic;                                        -- mem_dm
 			memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
-			reset_reset_n                   : in    std_logic                     := 'X';             -- reset_n
-			axi_signals_arcache             : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- arcache
-			axi_signals_arprot              : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- arprot
-			axi_signals_aruser              : in    std_logic_vector(4 downto 0)  := (others => 'X'); -- aruser
-			axi_signals_awcache             : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- awcache
-			axi_signals_awprot              : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- awprot
-			axi_signals_awuser              : in    std_logic_vector(4 downto 0)  := (others => 'X')  -- awuser
+			reset_reset_n                   : in    std_logic                     := 'X'              -- reset_n
 		);
 	end component adder_prototype;
 
 	u0 : component adder_prototype
 		port map (
+			axi_signals_arcache             => CONNECTED_TO_axi_signals_arcache,             -- axi_signals.arcache
+			axi_signals_arprot              => CONNECTED_TO_axi_signals_arprot,              --            .arprot
+			axi_signals_aruser              => CONNECTED_TO_axi_signals_aruser,              --            .aruser
+			axi_signals_awcache             => CONNECTED_TO_axi_signals_awcache,             --            .awcache
+			axi_signals_awprot              => CONNECTED_TO_axi_signals_awprot,              --            .awprot
+			axi_signals_awuser              => CONNECTED_TO_axi_signals_awuser,              --            .awuser
 			clk_clk                         => CONNECTED_TO_clk_clk,                         --         clk.clk
 			hps_io_hps_io_emac0_inst_TX_CLK => CONNECTED_TO_hps_io_hps_io_emac0_inst_TX_CLK, --      hps_io.hps_io_emac0_inst_TX_CLK
 			hps_io_hps_io_emac0_inst_TXD0   => CONNECTED_TO_hps_io_hps_io_emac0_inst_TXD0,   --            .hps_io_emac0_inst_TXD0
@@ -96,12 +102,6 @@
 			memory_mem_odt                  => CONNECTED_TO_memory_mem_odt,                  --            .mem_odt
 			memory_mem_dm                   => CONNECTED_TO_memory_mem_dm,                   --            .mem_dm
 			memory_oct_rzqin                => CONNECTED_TO_memory_oct_rzqin,                --            .oct_rzqin
-			reset_reset_n                   => CONNECTED_TO_reset_reset_n,                   --       reset.reset_n
-			axi_signals_arcache             => CONNECTED_TO_axi_signals_arcache,             -- axi_signals.arcache
-			axi_signals_arprot              => CONNECTED_TO_axi_signals_arprot,              --            .arprot
-			axi_signals_aruser              => CONNECTED_TO_axi_signals_aruser,              --            .aruser
-			axi_signals_awcache             => CONNECTED_TO_axi_signals_awcache,             --            .awcache
-			axi_signals_awprot              => CONNECTED_TO_axi_signals_awprot,              --            .awprot
-			axi_signals_awuser              => CONNECTED_TO_axi_signals_awuser               --            .awuser
+			reset_reset_n                   => CONNECTED_TO_reset_reset_n                    --       reset.reset_n
 		);
 

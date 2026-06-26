@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 23.1 991 (Future versions may contain additional information.) -->
- <!-- 2026.06.24.12:08:48 -->
+ <!-- 2026.06.25.22:24:40 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1782317327</value>
+  <value>1782440679</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -116,7 +116,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DATA_WIDTH">
    <type>int</type>
-   <value>32</value>
+   <value>128</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -452,7 +452,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>m_rdata</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>128</width>
     <role>rdata</role>
    </port>
    <port>
@@ -488,7 +488,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>m_wdata</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>128</width>
     <role>wdata</role>
    </port>
    <port>
@@ -512,7 +512,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>m_wstrb</name>
     <direction>Output</direction>
-    <width>4</width>
+    <width>16</width>
     <role>wstrb</role>
    </port>
    <port>
@@ -1127,7 +1127,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s_rdata</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>128</width>
     <role>rdata</role>
    </port>
    <port>
@@ -1163,7 +1163,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s_wdata</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>128</width>
     <role>wdata</role>
    </port>
    <port>
@@ -1187,7 +1187,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s_wstrb</name>
     <direction>Input</direction>
-    <width>4</width>
+    <width>16</width>
     <role>wstrb</role>
    </port>
    <port>
@@ -1555,15 +1555,15 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>dma_0</moduleName>
-    <slaveName>clk</slaveName>
-    <name>dma_0.clk</name>
-   </clockDomainMember>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
     <moduleName>master_0</moduleName>
     <slaveName>clk</slaveName>
     <name>master_0.clk</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>dma_0</moduleName>
+    <slaveName>clk</slaveName>
+    <name>dma_0.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -1816,7 +1816,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="readSlaveDataWidthMax">
    <type>int</type>
-   <value>32</value>
+   <value>128</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1826,7 +1826,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeAddressMap">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x2000' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1836,7 +1836,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeSlaveAddressWidthMax">
    <type>int</type>
-   <value>12</value>
+   <value>13</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1846,7 +1846,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeSlaveDataWidthMax">
    <type>int</type>
-   <value>32</value>
+   <value>128</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1888,7 +1888,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeMaximumSlaveSpan">
    <type>long</type>
-   <value>4096</value>
+   <value>8192</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2729,7 +2729,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>read_readdata</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>128</width>
     <role>readdata</role>
    </port>
    <port>
@@ -3024,7 +3024,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>write_address</name>
     <direction>Output</direction>
-    <width>12</width>
+    <width>13</width>
     <role>address</role>
    </port>
    <port>
@@ -3048,13 +3048,13 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>write_writedata</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>128</width>
     <role>writedata</role>
    </port>
    <port>
     <name>write_byteenable</name>
     <direction>Output</direction>
-    <width>4</width>
+    <width>16</width>
     <role>byteenable</role>
    </port>
    <port>
@@ -3069,7 +3069,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>onchip_memory2_0.s1</name>
     <baseAddress>0</baseAddress>
-    <span>4096</span>
+    <span>8192</span>
    </memoryBlock>
   </interface>
  </module>
@@ -76589,7 +76589,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SIZE_VALUE</name>
-   <value>4096</value>
+   <value>8192</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.WRITABLE</name>
@@ -76617,7 +76617,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_DATA_WIDTH</name>
-   <value>32</value>
+   <value>128</value>
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_FILENAME</name>
@@ -76649,7 +76649,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataWidth">
    <type>int</type>
-   <value>32</value>
+   <value>128</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -76721,7 +76721,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="memorySize">
    <type>long</type>
-   <value>4096</value>
+   <value>8192</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -76860,7 +76860,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_addr_width">
    <type>int</type>
-   <value>10</value>
+   <value>9</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -76868,7 +76868,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_addr_width2">
    <type>int</type>
-   <value>10</value>
+   <value>9</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -76876,7 +76876,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_data_width">
    <type>int</type>
-   <value>32</value>
+   <value>128</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -76884,7 +76884,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_data_width2">
    <type>int</type>
-   <value>32</value>
+   <value>128</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -77005,7 +77005,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>4096</value>
+    <value>8192</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -77093,7 +77093,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="explicitAddressSpan">
     <type>java.math.BigInteger</type>
-    <value>4096</value>
+    <value>8192</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -77304,7 +77304,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>10</width>
+    <width>9</width>
     <role>address</role>
    </port>
    <port>
@@ -77328,19 +77328,19 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>readdata</name>
     <direction>Output</direction>
-    <width>32</width>
+    <width>128</width>
     <role>readdata</role>
    </port>
    <port>
     <name>writedata</name>
     <direction>Input</direction>
-    <width>32</width>
+    <width>128</width>
     <role>writedata</role>
    </port>
    <port>
     <name>byteenable</name>
     <direction>Input</direction>
-    <width>4</width>
+    <width>16</width>
     <role>byteenable</role>
    </port>
   </interface>
@@ -87778,33 +87778,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/dma_0.clk"
-   kind="clock"
-   version="23.1"
-   start="clk_0.clk"
-   end="dma_0.clk">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>clk_0</startModule>
-  <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>dma_0</endModule>
-  <endConnectionPoint>clk</endConnectionPoint>
- </connection>
- <connection
    name="clk_0.clk/master_0.clk"
    kind="clock"
    version="23.1"
@@ -87829,6 +87802,33 @@ parameters are a RESULT of the module parameters. -->
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
   <endModule>master_0</endModule>
+  <endConnectionPoint>clk</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk/dma_0.clk"
+   kind="clock"
+   version="23.1"
+   start="clk_0.clk"
+   end="dma_0.clk">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk</startConnectionPoint>
+  <endModule>dma_0</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection

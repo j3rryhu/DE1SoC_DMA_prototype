@@ -1,5 +1,11 @@
 
 module adder_prototype (
+	axi_signals_arcache,
+	axi_signals_arprot,
+	axi_signals_aruser,
+	axi_signals_awcache,
+	axi_signals_awprot,
+	axi_signals_awuser,
 	clk_clk,
 	hps_io_hps_io_emac0_inst_TX_CLK,
 	hps_io_hps_io_emac0_inst_TXD0,
@@ -42,14 +48,14 @@ module adder_prototype (
 	memory_mem_odt,
 	memory_mem_dm,
 	memory_oct_rzqin,
-	reset_reset_n,
-	axi_signals_arcache,
-	axi_signals_arprot,
-	axi_signals_aruser,
-	axi_signals_awcache,
-	axi_signals_awprot,
-	axi_signals_awuser);	
+	reset_reset_n);	
 
+	input	[3:0]	axi_signals_arcache;
+	input	[2:0]	axi_signals_arprot;
+	input	[4:0]	axi_signals_aruser;
+	input	[3:0]	axi_signals_awcache;
+	input	[2:0]	axi_signals_awprot;
+	input	[4:0]	axi_signals_awuser;
 	input		clk_clk;
 	output		hps_io_hps_io_emac0_inst_TX_CLK;
 	output		hps_io_hps_io_emac0_inst_TXD0;
@@ -93,10 +99,4 @@ module adder_prototype (
 	output		memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		reset_reset_n;
-	input	[3:0]	axi_signals_arcache;
-	input	[2:0]	axi_signals_arprot;
-	input	[4:0]	axi_signals_aruser;
-	input	[3:0]	axi_signals_awcache;
-	input	[2:0]	axi_signals_awprot;
-	input	[4:0]	axi_signals_awuser;
 endmodule

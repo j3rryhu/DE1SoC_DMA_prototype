@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -23,7 +24,9 @@
 #define CTRL_QUADWORD       (1 << 11)
 #define CTRL_GO             (1 << 3)
 #define CTRL_LEEN           (1 << 7)
+#define CTRL_REEN           (1 << 5)
 #define CTRL_WCON           (1 << 9)
+#define CTRL_RCON           (1 << 8)
 
 #define RSTMGR_BASE         0xFFD05000
 #define BRGMODRST_OFFSET    0x1C
@@ -58,7 +61,7 @@ int main() {
     // =========================================================
     // THE DOWNGRADE: 1024 Bytes (256 integers)
     // =========================================================
-    uint32_t transfer_bytes = 512;
+    uint32_t transfer_bytes = 4096;
     uint32_t num_integers = transfer_bytes / 4;
 
     printf("Generating %u integers in physical RAM...\n", num_integers);
@@ -73,28 +76,27 @@ int main() {
     dma_ctrl[DMA_LENGTH_REG]     = transfer_bytes;
 
     struct timespec start, end;
-    clock_gettime(CLOCK_MONOTONIC, &start);
 
     printf("status = 0x%08X\n", dma_ctrl[DMA_STATUS_REG]);
     printf("readaddr = 0x%08X\n", dma_ctrl[DMA_READ_ADDR_REG]);
     printf("writeaddr = 0x%08X\n", dma_ctrl[DMA_WRITE_ADDR_REG]);
     printf("length = 0x%08X\n", dma_ctrl[DMA_LENGTH_REG]);
 
+    clock_gettime(CLOCK_MONOTONIC, &start);
+
     // Firing with QUADWORD because your hardware is still 128-bit
     dma_ctrl[DMA_STATUS_REG] = 0;
-    dma_ctrl[DMA_CONTROL_REG] = (CTRL_WORD | CTRL_LEEN | CTRL_GO);
+    dma_ctrl[DMA_CONTROL_REG] = (CTRL_WORD | CTRL_LEEN | CTRL_WCON | CTRL_GO);
 
-    printf("Done DMA config\n");
+    // printf("Done DMA config\n");
     // FIXED: Waiting for the BUSY bit (0x2) to drop to 0
     uint32_t dma_status = dma_ctrl[DMA_STATUS_REG];
     int timeout = 5000000;
     uint32_t s;
     do {
         s = dma_ctrl[DMA_STATUS_REG];
-        if(timeout % 100000 == 0){
-            printf("DMA Status: %d\n", s);
-        }
     } while (((s >> 1) & 1) && --timeout);
+    // } while (((s >> 1) & 1));
 
     printf("status = 0x%08X\n", dma_ctrl[DMA_STATUS_REG]);
     printf("readaddr = 0x%08X\n", dma_ctrl[DMA_READ_ADDR_REG]);

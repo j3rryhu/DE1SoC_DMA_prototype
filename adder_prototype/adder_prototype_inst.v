@@ -1,4 +1,10 @@
 	adder_prototype u0 (
+		.axi_signals_arcache             (<connected-to-axi_signals_arcache>),             // axi_signals.arcache
+		.axi_signals_arprot              (<connected-to-axi_signals_arprot>),              //            .arprot
+		.axi_signals_aruser              (<connected-to-axi_signals_aruser>),              //            .aruser
+		.axi_signals_awcache             (<connected-to-axi_signals_awcache>),             //            .awcache
+		.axi_signals_awprot              (<connected-to-axi_signals_awprot>),              //            .awprot
+		.axi_signals_awuser              (<connected-to-axi_signals_awuser>),              //            .awuser
 		.clk_clk                         (<connected-to-clk_clk>),                         //         clk.clk
 		.hps_io_hps_io_emac0_inst_TX_CLK (<connected-to-hps_io_hps_io_emac0_inst_TX_CLK>), //      hps_io.hps_io_emac0_inst_TX_CLK
 		.hps_io_hps_io_emac0_inst_TXD0   (<connected-to-hps_io_hps_io_emac0_inst_TXD0>),   //            .hps_io_emac0_inst_TXD0
@@ -41,12 +47,6 @@
 		.memory_mem_odt                  (<connected-to-memory_mem_odt>),                  //            .mem_odt
 		.memory_mem_dm                   (<connected-to-memory_mem_dm>),                   //            .mem_dm
 		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>),                //            .oct_rzqin
-		.reset_reset_n                   (<connected-to-reset_reset_n>),                   //       reset.reset_n
-		.axi_signals_arcache             (<connected-to-axi_signals_arcache>),             // axi_signals.arcache
-		.axi_signals_arprot              (<connected-to-axi_signals_arprot>),              //            .arprot
-		.axi_signals_aruser              (<connected-to-axi_signals_aruser>),              //            .aruser
-		.axi_signals_awcache             (<connected-to-axi_signals_awcache>),             //            .awcache
-		.axi_signals_awprot              (<connected-to-axi_signals_awprot>),              //            .awprot
-		.axi_signals_awuser              (<connected-to-axi_signals_awuser>)               //            .awuser
+		.reset_reset_n                   (<connected-to-reset_reset_n>)                    //       reset.reset_n
 	);
 
